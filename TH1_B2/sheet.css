@@ -1,0 +1,126 @@
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	margin: auto
+}
+#header {
+	background: #2D2F35;
+	margin-bottom: 0px;
+}
+#header img {
+	margin-left: 10px;
+}
+#product {
+	background-image: url(images/bg_home_intro.gif);
+	border-top: solid 1px #474a51;
+	border-bottom: solid 1px #474a51;
+	height: 300px;
+}
+#title {
+	width: 30%;
+	margin-left: 10%;
+	float: left;
+}
+#title h3 {
+	font-family: Verdana, Geneva, sans-serif;
+	color: #FF0;
+	margin-top: 0;
+}
+#title p {
+	color: #cccccc;
+	font-size: 13px;
+	line-height: 14px;
+	margin-top: 40px;
+}
+#pro_img {
+	float: left;
+	margin-left: 12%;
+}
+#images {
+	background: #2D2F35;
+	height: 120px;
+	padding-top: 37px;
+	padding-left: 16.5%;
+}
+.item {
+	float: left;
+	position: relative;
+	clear: right;
+}
+.img_1 {
+	margin-left: 7.5px;
+	margin-right: 7.5px;
+}
+.img_2 {
+	position: absolute;
+	left: 82.5%;
+	top: 3px;
+}
+#content {
+	background: #2D2F35;
+	height: 375px;
+	border-top: solid 1px #474a51;
+	border-bottom: solid 1px #474a51;
+	font-size: 13px;
+}
+#content_left {
+	background-image: url(images/home_services_bg_design.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	width: 32%;
+	height: 88%;
+	float: left;
+	margin-left: 12.5%;
+	text-align: justify;
+}
+#content_left h2 {
+	color: #FF0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#content_left p {
+	color: #cccccc;
+	font-size: 13px;
+	line-height: 14px;
+	margin-top: 0;
+}
+#content_right {
+	float: left;
+	background-image: url(images/home_services_bg_marketing.gif);
+	background-position: left top;
+	background-repeat: no-repeat;
+	width: 30%;
+	height: 100%;
+	margin-left: 13.5%;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	text-align: justify;
+	clear: none;
+}
+#content_right h2 {
+	color: #FF0;
+	margin-top: 0;
+}
+#content_right p {
+	color: #cccccc;
+	font-size: 13px;
+	line-height: 14px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	padding-top: 25px;
+}
+#footer {
+	float: left;
+	background-color: #24262a;
+	background-repeat: no-repeat;
+	height: 120px;
+	width: 100%;
+}
+#footer h5 {
+	color: #cccccc;
+	margin-top: 0;
+	text-align: center;
+}
+
+#footer_img {
+	margin-left:18%;
+}
