@@ -96,3 +96,6 @@ a {
 #y_comment table textarea {
 	width: 99.9%;
 }
+textarea {
+	resize: none;
+}
