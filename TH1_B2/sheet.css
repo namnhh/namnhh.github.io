@@ -26,7 +26,7 @@ body {
 	margin-top: 0;
 }
 #title p {
-	color: #cccccc;
+	color: #FFF;
 	font-size: 13px;
 	line-height: 14px;
 	margin-top: 40px;
@@ -78,7 +78,7 @@ body {
 	margin-bottom: 0;
 }
 #content_left p {
-	color: #cccccc;
+	color: #FFF;
 	font-size: 13px;
 	line-height: 14px;
 	margin-top: 0;
@@ -101,7 +101,7 @@ body {
 	margin-top: 0;
 }
 #content_right p {
-	color: #cccccc;
+	color: #FFF;
 	font-size: 13px;
 	line-height: 14px;
 	margin-bottom: 0;
@@ -116,7 +116,7 @@ body {
 	width: 100%;
 }
 #footer h5 {
-	color: #cccccc;
+	color: #FFF;
 	margin-top: 0;
 	text-align: center;
 }

@@ -1,10 +1,14 @@
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+	margin:auto;
+	padding:auto;
 
-
+}
 #wrapper {
 	width: 500px;
-	font-family: Georgia, "Times New Roman", Times, serif;
+	height:100%;
 	border: solid 1px #0033FF;
-	margin: auto;
+	margin:auto;
 }
 p {
 	padding: 0;
@@ -21,7 +25,7 @@ a {
 }
 #information {
 	height: 100px;
-	margin-bottom: 10px;
+	margin-bottom: 25px;
 }
 #information #avatar {
 	width: 100px;
@@ -32,8 +36,11 @@ a {
 	float: left;
 	overflow: scroll;
 	height: 100%;
-	width: 79%;
+	width: 80%;
 	font-size: 16px;
+}
+.pp_inf p {
+	padding-left:10%;
 }
 #t_title {
 	font-weight: bold;
@@ -54,6 +61,8 @@ a {
 .c_list {
 	background: #ECECEC;
 	margin-bottom: 0px;
+	margin-left:1%;
+	margin-right:1%;
 }
 .c_list p {
 	font-size: 15px;
@@ -91,10 +100,11 @@ a {
 }
 #y_comment table input {
 	width: 39%;
-	height: 20px;
+	height: 17px;
 }
 #y_comment table textarea {
-	width: 99.9%;
+	width: 99%;
+	font-family:Georgia, "Times New Roman", Times, serif;
 }
 textarea {
 	resize: none;
