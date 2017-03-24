@@ -1,0 +1,81 @@
+/* CSS Document */
+body {
+	margin:0;
+	padding:0;
+	font-family: Arial,serif;
+}
+p,h4 {
+	margin:0;
+	padding:0;
+}
+#content{
+	margin-left:10%;
+	width:80%;
+	background-color:#333;
+	display:inline-block;
+}
+#content_left{
+	margin-top:20px;
+	margin-left:2.5px;
+	background-color:#FFF;
+	display:inline-block;
+	width:60%;
+}
+#l_top{
+	width:100%;
+}
+#t_main_left{
+	width:49.5%;
+	float:left;
+	clear:both;
+	margin-bottom:30px;
+	
+}
+#t_main_right{
+	width:50.3%;
+	float:left;
+	border-left:dotted 1px gray;
+	margin-bottom:30px;
+}
+.t_title{
+	background-color:#F00;
+	color:#FFF;
+	border-top: solid 1px white;
+	border-bottom: dotted 1px white;
+	border-left:solid 1px black;
+	padding-left:10px;
+}
+#t_img_1 {
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:2%;
+}
+#t_img_2 {
+	padding-right:1%;
+	padding-left:14px;
+	padding-top:2%;
+}
+.t_icon {
+	padding-left:10px;
+	position:relative;
+		
+}
+.t_icon a {
+	position:absolute;
+	left:248px;
+	top:-3px;
+	text-decoration:none;
+	color:black;
+}
+.t_info{
+	padding-top:3px;
+	padding-left:10px;
+	font-size:12px;
+}
+.t_info h4{
+	margin-bottom:4px;
+}
+#l_img {
+	margin-left:12px;
+	width:100%;
+}
