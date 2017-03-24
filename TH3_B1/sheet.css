@@ -48,7 +48,7 @@ li {
 	height:72px;
 }
 
-#blogroll_top a {
+#blogroll_top a:link,a:visited {
 	color:#0a6395;
 }
 #blogroll_bottom {
