@@ -146,5 +146,6 @@ li {
 	border:solid 1px #dadada ;
 }
 #competiton_inf p {
+	line-height:15px;
 	color:#0a6395;
 }
