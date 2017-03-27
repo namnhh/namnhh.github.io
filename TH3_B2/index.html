@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="sheet.css">
+<title>TH3_B2</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	        var index=1;
+			$("#c1").show();
+			$("#c2").hide();
+			$("#c3").hide();
+			function showDiv(n){
+				$("#c" + n).show();
+				$("#" + n).removeClass('drop_right');
+			}
+			function hideDiv(n){
+				$("#c" + n).hide();
+				$("#" + n).addClass('drop_right');
+			}
+			jQuery.fn.onClick=function(n){
+				hideDiv(index);
+				showDiv(n);
+				index=n;
+			}
+});
+</script>
+</head>
+<body>
+<!--content-->
+<div id="content"> 
+  <!--wrap_content-->
+  <div id="wrap_content"> 
+    
+    <!--content_left-->
+    <div id="content_left"> 
+      
+      <!--l_top-->
+      <div id="l_top"> 
+        <!--t_main_left-->
+        <div id="t_main_left">
+          <div class="t_title">
+            <p>DAILY CELEBRITY GOSSIP</p>
+          </div>
+          <div id="t_img_1"> <img src="images/title_image_1.jpg"> </div>
+          <div class="t_icon"> <img src="images/h3-confidential-showbuzz-bg.gif"> <a href="#">MORE</a> </div>
+          <div class="t_info">
+            <h4>+RUSELL CROWE + MORE...</h4>
+            <p>RUSSELL Crowe's son to marry Keith & Nocole's daughter, plus Renee Zellweger reveals her breast cancer scare</p>
+          </div>
+        </div>
+        <!--t_main_left--> 
+        
+        <!--t_main_right-->
+        <div id="t_main_right">
+          <div class="t_title">
+            <p>DAILY CELEBRITY PICS</p>
+          </div>
+          <div> </div>
+          <div id="t_img_2"> <img src="images/title_image_2.jpg"> </div>
+          <div class="t_icon"> <img src="images/h3-confidential-shootingstars-bg.gif"> <a href="#">MORE</a> </div>
+          <div class="t_info">
+            <h4>+BECKHAMS, CLAUDIA SCHIFFER</h4>
+            <p>VICTORIA and David Beckham dine out in NY, as top models Claudia Schiffer and Eva Hezigova hit the shops in Milan</p>
+          </div>
+        </div>
+        <!--t_main_right-->
+        <div id="l_img"> <img src="images/confidential-logo.gif"> </div>
+      </div>
+      <!--l_top--> 
+      
+      <!--l_bottom-->
+      <div id="l_bottom"> 
+        
+        <!--b_main_left-->
+        <div id="b_main_left">
+          <div class="b_l_title">
+            <p>TOP 3 MOVIE TRAILERS</p>
+          </div>
+          <div id="b_l_content">
+            <div class="dropdown">
+              <div class="dropdown_title">
+                <button id="1" class="drop_right drop_down" onClick="$('drop_right').onClick(1)">The House Bunny (M)</button>
+              </div>
+              <div class="dropdown_content" id="c1"> <img src="images/0,,6254346,00.jpg" alt="0,,062.jpg">
+                <div class="dropdown_content_info">
+                  <p>When Playboy bunny Shelly is tossed out of the mansion. she falls in with the sorority girls from Zeta Alpha Zeta</p>
+                  <a href="#">Watch Now</a> </div>
+              </div>
+            </div>
+            <div class="dropdown">
+              <div class="dropdown_title">
+                <button id="2" class="drop_right drop_down" onClick="$('drop_right').onClick(2)">Eagle Eye (M)</button>
+              </div>
+              <div class="dropdown_content" id="c2"> <img src="images/0,,6254346,00.jpg" alt="0,,062.jpg">
+                <div class="dropdown_content_info">
+                  <p>When Playboy bunny Shelly is tossed out of the mansion. she falls in with the sorority girls from Zeta Alpha Zeta</p>
+                  <a href="#">Watch Now</a> </div>
+              </div>
+            </div>
+            <div class="dropdown">
+              <div class="dropdown_title">
+                <button id="3" class="drop_right drop_down" onClick="$('drop_right').onClick(3)">The Journey To The Centre Of The Earth (PG))</button>
+              </div>
+              <div class="dropdown_content" id="c3"> <img src="images/0,,6254346,00.jpg" alt="0,,062.jpg">
+                <div class="dropdown_content_info">
+                  <p>When Playboy bunny Shelly is tossed out of the mansion. she falls in with the sorority girls from Zeta Alpha Zeta</p>
+                  <a href="#">Watch Now</a> </div>
+              </div>
+            </div>
+            <div class="now_showing"> <img src="images/now-showing-icon.gif" alt="now_showing">
+              <p> Now Showing </p>
+              <select>
+                <option>Select Movie</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!--b_main_left--> 
+        
+        <!--b_main_right-->
+        <div id="b_main_right">
+          <div id="b_r_title">
+            <p>MOVIE REVIEWS</p>
+          </div>
+          <div class="b_l_content"> <a href="#" id="icon_b_r_1"> Eagle Eye</a>
+            <div class="b_l_content_info"> <img src="images/thumb_100x66_216371_216162_2008_eagle_eye_00.jpg" alt="ee">
+              <p> SHIA LaBeouf hits the ground running in Eagle Eye, an against the clock conspiracy thrilller with a timely technological t... </p>
+            </div>
+            <a href="#" id="icon_b_r_2">View Trailer</a> </div>
+          <div class="b_l_content"> <a href="#" id="icon_b_r_1"> House Bunny</a>
+            <div class="b_l_content_info"> <img src="images/thumb_100x66_215784_215698_2008_the_house_bunny.jpg" alt="hb">
+              <p> IF YOU left Legally Blonde and Revenge Of The Nerds DVDs in a darkened room for long enough, something like The House Bun... </p>
+            </div>
+            <a href="#" id="icon_b_r_2">View Trailer</a> </div>
+          <div class="local-cinema-listings"> <a href="#"><img src="images/clock.gif" alt="clock">Local Cinema listings</a>
+            <p>+ MORE MOVIES</p>
+          </div>
+        </div>
+        <!--b_main_right--> 
+      </div>
+      <!--l_bottom--> 
+    </div>
+    <!--content_left--> 
+    
+    <!--content_right-->
+    <div id="content_right"> <img src="images/Entertainment.gif" alt="search"> 
+      <!-- search -->
+      <div class="search">
+        <form action="#">
+          <table>
+            <tr>
+              <td><input type="text"></td>
+              <td><button type="submit">SEARCH</button></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <!-- /search --> 
+    </div>
+    <!--content_right--> 
+  </div>
+  <!--wrap_content>
+  <!--content_footer-->
+  <div id="content_footer">
+    <ul>
+      <li> <a href="#"> <img src="images/mobile.gif" alt="">
+        <p>News on your mobile</p>
+        </a> </li>
+      <li> <a href="#"> <img src="images/RSS.gif" alt="">
+        <p>RSS feeds</p>
+        </a> </li>
+      <li> <a href="#"> <img src="images/news.gif" alt="">
+        <p>Newletters</p>
+        </a> </li>
+      <li> <a href="#"> <img src="images/send.gif" alt="">
+        <p>Send your news stories</p>
+        </a> </li>
+      <li> <a href="#"> <img src="images/photo.gif" alt="">
+        <p>Send your news photos</p>
+        </a> </li>
+    </ul>
+  </div>
+  <!--content_footer--> 
+  
+</div>
+<!--content--> 
+<!--footer-->
+<div id="footer"> <a href="#">Help</a> &#124; <a href="#">Contact Us</a> &#124; <a href="#">Advertise with Us</a> &#124; <a href="#">Job Opportunities</a> &#124; <a href="#">Terms &amp; Conditions</a> &#124; <a href="#">Privacy Policy</a> &#124; <a href="#">Accessibillity</a> &#124; <a href="#">Sitemap</a> &#124; <a href="#">News Headlines from Our Partners</a> <a href="#" id="back-top">Back to top</a>
+  <p>Copyright 2008 News Limited. All times AEST (GMT +10).</p>
+</div>
+<!--footer-->
+</body>
+</html>
