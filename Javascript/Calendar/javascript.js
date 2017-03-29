@@ -64,6 +64,7 @@ function showCalendar(m,y) {
 		   cell = row.insertCell(j);
 		   cell.innerHTML = d;
 		   cell.style.background = "#FFF";
+		   if (d <= dayInMonth)
 		   cell.addEventListener("click", function(e) {choose=e.target.innerHTML;hideCalendar(m,choose,y)});
 		   if (d > dayInMonth) {
 		       cell.innerHTML = "&nbsp;";
