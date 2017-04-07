@@ -10,7 +10,7 @@
 #input_date img {
 	position:absolute;
 	top:2px;
-	left:220px;
+	left:150px;
 }
 #input_date input[type="text"] {
     height:20px;   
@@ -21,8 +21,7 @@
 	cellpadding:2px; 
 	text-align:center;
 	display:none;
-	background-color:#000;
-	cursor:pointer;
+	background:#000;
 }
 td {
 	height:36px;
