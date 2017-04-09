@@ -1,5 +1,6 @@
 $(document).ready(function(e) {
 var now = new Date();
+var choose;
 init();
 //ham khoi tao
 function init(){
@@ -11,6 +12,11 @@ function init(){
 	$("#m_next").click(function() { nextMonth() });
 	$("#m_select").change(function(){showOption()});
 	$("#y_select").change(function() {showOption()});
+	$("#tbCalendar").on('click','.tb',function(e){
+    e.preventDefault();
+    var d = $(this).text();
+    hideCalendar(d);
+    }); 
   
 }
 //Show now
@@ -19,12 +25,10 @@ function showNow() {
 	var month = now.getMonth();
 	var year = now.getFullYear(); 
     if ($("#tbCalendar").css("display") == 'none') {
-      $("#m_select option:selected").val(month);
-      $("#y_select option:selected").val(year);
+      $("#m_select").val(month);
+      $("#y_select").val(year);
       $("#tbCalendar").css("display", "block"); 
 	  showCalendar($("#m_select").val(),$("#y_select").val());
-	  $('select option[value="'+month+'"]').attr("selected",true);
-	  $('select option[value="'+year+'"]').attr("selected",true);
     }
 }
 // Hien thi Calendar
@@ -45,9 +49,9 @@ function showCalendar(m,y) {
 	for (i = fristDay; i < 7; i++) {
 	  //cell.addEventListener("click", function(e) {choose=e.target.innerHTML;hideCalendar(m,choose,y)});
 	  if (d == now.getDate()) {
-		  cell+="<td style='background:#0CF;border:solid 2px #F00'>"+d+"</td>";
+		  cell+="<td class='tb' style='background:#0CF;border:solid 2px #F00'>"+d+"</td>";
 	  }
-	  else cell+= "<td style='background:#FFF;border:solid 2ppx #FF0000'>"+d+"</td>";
+	  else cell+= "<td class='tb' style='background:#FFF;border:solid 2ppx #FF0000'>"+d+"</td>";
 	  d++;
 	}
 	$("#tbCalendar > tbody:last-child ").append(cell+"</tr>");
@@ -58,15 +62,15 @@ function showCalendar(m,y) {
 		for (j = 0; j < 7; j++)
 		{		   
 		   if(d == now.getDate()){
-			   cell+="<td style='background:#0CF;border:solid 2px #F00'>"+d+"</td>";
+			   cell+="<td class='tb' style='background:#0CF;border:solid 2px #F00' >"+d+"</td>";
 	       } 
-		   else if(d <= dayInMonth) cell+="<td style='background:#FFF;border:solid 2px #FFF'>"+d+"</td>";
+		   else if(d <= dayInMonth) cell+="<td class='tb' style='background:#FFF;border:solid 2px #FFF'>"+d+"</td>";
 		   //if (d <= dayInMonth)
 		   //cell.addEventListener("click", function(e) {choose=e.target.innerHTML;hideCalendar(m,choose,y)});
-		   if (d > dayInMonth) {
+		   if (month == 1 && d > dayInMonth ) {
 			   cell+="<td style='background:#000;border:solid 2px #CCCCCC'>"+'&nbsp;'+"</td>";
 		   }
-		   if (month == 1 && d > dayInMonth ) {
+		   else if (d > dayInMonth) {
 			   cell+="<td style='background:#000;border:solid 2px #CCCCCC'>"+'&nbsp;'+"</td>";
 		   }		   
 		   
@@ -93,45 +97,61 @@ function clearRow() {
 //Previous Year
 function preYear() {
 	clearRow();
-
+	var y = Number($("#y_select").val());
+	var lastYear = Number($("#y_select option:last").val());
+	var firstYear = Number($("#y_select option:first").val());
+	if (y > firstYear ) y--;
+	else if(y <= firstYear) y = lastYear;
+	$("#y_select").val(y); 
+    showCalendar($("#m_select").val(), $("#y_select").val());
 }
 //Next Year
 function nextYear() {
 	clearRow();
-	console.log($("#m_select").text());
+	var y = Number($("#y_select").val());
+	var lastYear = Number($("#y_select option:last").val());
+	var firstYear = Number($("#y_select option:first").val());
+	if (y < lastYear ) y++;
+	else if(y >= firstYear) y = firstYear;
+	$("#y_select").val(y); 
+    showCalendar($("#m_select").val(), $("#y_select").val());
 }
 //Next Month
 function nextMonth() {
-	var month = $("#m_select");
-    var year = $("#y_select");
+	var m = Number($("#m_select").val());
+    var y = Number($("#y_select").val());
+	var lastYear = Number($("#y_select option:last").val());
+	var firstYear = Number($("#y_select option:first").val());
 	clearRow();
-	if ($("#m_select").selectedIndex < 11) {
-		$("#m_select").selectedIndex++;
+	if (m < 11) {
+		m++;
 	} 
 	else {
-		$("#m_select").selectedIndex = 0;
-        if ($("#y_select").selectedIndex < $("#y_select").length - 1) {
-			$("#y_select").selectedIndex++;
-		} else {
-			$("#y_select").selectedIndex = $("#y_select").length - 1;
-		}
+		m = 0;
+        if (y < lastYear ) y++;
+	    else if(y >= firstYear) y = firstYear;
 	}
+	$("#y_select").val(y); 
+	$("#m_select").val(m); 
 	showCalendar($("#m_select").val(),$("#y_select").val());
 }
 //PreMonth
 function preMonth() {
+	var m = Number($("#m_select").val());
+    var y = Number($("#y_select").val());
+	var lastYear = Number($("#y_select option:last").val());
+	var firstYear = Number($("#y_select option:first").val());
 	clearRow();
-	if ($("#m_select").val() > 0) {
-		$("#m_select").val()--;
-	} else {
-		$("#m_select").val() = 11;
-
-		if ($("#y_select").val > 1990) {
-			$("#y_select").selectedIndex--;
-		} else {
-			$("#y_select").selectedIndex = $("#y_select").length - 1 ;
-		}
+	if (m > 0) {
+		m--;
+	} 
+	else {
+		m = 11;
+       if (y > firstYear ) y--;
+	   else if(y <= firstYear) y = lastYear;
 	}
+	$("#y_select").val(y); 
+	$("#m_select").val(m); 
 	showCalendar($("#m_select").val(),$("#y_select").val());
 }
 //show Option choose Month and Year
@@ -139,9 +159,11 @@ function showOption() {
 	clearRow();
 	showCalendar($("#m_select").val(), $("#y_select").val());
 }
-function hideCalendar(m,d,y) {
+function hideCalendar(d) {
+	var m = $("#m_select").val();
+	var y =  $("#y_select").val();
 	var date_string = d + "/" + (Number(String(m))+1) + "/" + y; 
-    $("#date").val() = date_string;
+    $("#date").val(date_string);
 	$("#tbCalendar").css("display", "none");
 }
 });
