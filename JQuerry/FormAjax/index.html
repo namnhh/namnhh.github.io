@@ -6,38 +6,39 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script type="text/javascript" src="jquerry.js"></script>
 <script type="text/javascript" src="Calendar/javascript.js"></script>
+<link rel="stylesheet" type="text/css" href="sheet.css">
 </head>
 <body>
 <form id="form3" name="form3" method="post" >
-  <table width="500" style="border:solid 1px #000000" align="center">
+  <table width="500" style="border:solid 1px #FF0000" align="center">
   <tr>
     <td><table width="500" align="center">
       <tr>
-        <td colspan="3" align="center"><h2>ĐĂNG KÍ</h2></td>
+        <td colspan="3" align="center"><h2 style="color:#06F">ĐĂNG KÍ</h2></td>
       </tr>
       <tr>
-        <td width="112" height="58" align="right"> Username:</td>
+        <td width="112" height="58" align="right" style="color:#0F3"> Username:</td>
         <td width="250"><label for="txName"></label>
-          <input name="txName" type="text" id="txtName" size="30" placeholder="Type Username"></td>
+          <input class="inp" name="txName" type="text" id="txtName" size="30" placeholder="Type Username"></td>
         <td width="116" id="showUserError"></td>
       </tr>
       <tr>
-        <td height="38" align="right"> Password:</td>
+        <td height="38" align="right" style="color:#0F3"> Password:</td>
         <td><label for="txtPass"></label>
-          <input name="txtPass" type="password" id="txtPass" size="30" placeholder="Type Password" /></td>
+          <input class="inp" name="txtPass" type="password" id="txtPass" size="30" placeholder="Type Password" /></td>
         <td id="showPassError"></td>
       </tr>
       <tr>
-        <td height="46" align="right"> Email:</td>
+        <td height="46" align="right" style="color:#0F3"> Email:</td>
         <td><label for="txtEmail"></label>
-          <input name="txtEmail" type="text" id="txtEmail" size="30" placeholder="Type Email"></td>
+          <input class="inp" name="txtEmail" type="text" id="txtEmail" size="30" placeholder="Type Email"></td>
         <td id="showEmailError"></td>
       </tr>
       <tr>
-        <td height="42" align="right">Birthday:</td>
+        <td height="42" align="right" style="color:#0F3">Birthday:</td>
         <td>
           <div id="bd">
-          <input id="txtDate" name="txtDate" type="text" size="30" placeholder="Choose Birthday" disabled/>
+          <input class="inp" id="txtDate" name="txtDate" type="text" size="30" placeholder="Choose Birthday" disabled/>
           <img id="icon_calendar" src="images/calendar.png" alt="icon_calendar" width="20"/></div>
           <!--input_date-->
           <div id="calendar">
@@ -80,8 +81,8 @@
       </tr>
       <tr>
         <td height="54">&nbsp;</td>
-        <td><input type="button" name="btnSub" id="btnSub" value="Submit"/>
-          <input type="button" name="btnRef" id="btnRef" value="Refresh"></td>
+        <td><input class="but" type="button" name="btnSub" id="btnSub" value="Submit"/>
+          <input class="but" type="button" name="btnRef" id="btnRef" value="Refresh"></td>
         <td>&nbsp;</td>
       </tr>
     </table></td>
