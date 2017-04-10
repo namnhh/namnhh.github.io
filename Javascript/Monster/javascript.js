@@ -174,6 +174,7 @@ myGameArea.addEventListener("click", function(e) {
 	var xMouse = e.pageX - this.offsetLeft;
 	//e.pageY is value of location y of mouse; offsetTop is distance from boder-top to apple
 	var yMouse = e.pageY - this.offsetTop;
+	if(running == true && dead == false) {
 	score -=10;
 	heartNum--;
 	if (apple1.visible == true) {
@@ -206,6 +207,7 @@ myGameArea.addEventListener("click", function(e) {
 	if (apple10.visible == true) {
 		chooseApple(xMouse,yMouse,apple10);
 	}
+ }
 	
 });
 //set screen
@@ -339,6 +341,7 @@ function restartGame() {
 	highScore = sessionStorage.getItem("highscore");
 	boomNum = 3;
 	apple1.visible = true;
+	dead = false;
 	main();
 }
 //boom apple
@@ -403,15 +406,17 @@ myGameTitle.addEventListener("click",function(e) {
 	var xClick = e.pageX - this.offsetLeft;
 	var yClick = e.pageY - this.offsetTop;
 	//click to boom
-	if(xClick >= 250 && xClick <= 310 && yClick >=60 && yClick <=120) {
+	if(running == true && dead == false) {
+	   if(xClick >= 250 && xClick <= 310 && yClick >=60 && yClick <=120) {
 		boomApple();
+	   }
 	}
     //click to pause
 	if(xClick >= 340 && xClick <= 400 && yClick >=60 && yClick <=120) {
-		if(running == true) {
+		if(running == true && dead == false) {
 			running = false;
 		}
-		else if(running == false) {
+		else if(running == false && dead == false) {
 			running = true;
 			main();
 		}
