@@ -1,0 +1,13 @@
+Main Hosting Details
+Control panel username b16_19945378
+Control panel password 	**********
+Control panel URL cpanel.byethost16.com
+MySQL username b16_19945378
+MySQL password **********
+MySQL hostname sql205.byethost16.com
+Database name b16_19945378_user
+FTP username b16_19945378
+FTP password **********
+FTP host name ftp.byethost16.com
+Your Website URL's
+Home page http://ajaxformjq.byethost16.com
