@@ -1,6 +1,7 @@
 // JavaScript Document
 $(document).ready(function() {
-    var success = 0.8; // % of block success
+	var success = data[0]; // % of block success
+	
     var my3DPieChart = (function () { 
         var myCanvas = $('#myCanvas')[0];
         myCanvas.width = 800; 
@@ -37,10 +38,10 @@ $(document).ready(function() {
             ctx.lineTo(centerX, centerY + i); 
 		    ctx.restore();
 		    if (i==1) {
-		        ctx.fillStyle = "#03C"; // top of chart
+		        ctx.fillStyle = colors[0]; // top of chart
 			}
  		    else {
-		        ctx.fillStyle = "#0CF";
+		        ctx.fillStyle = colors[1];
 			}
 		    ctx.fill();
 	    }
@@ -54,10 +55,10 @@ $(document).ready(function() {
             ctx.lineTo(centerX + space, centerY - space + i); // distance between 2 block
 	        ctx.restore(); // Restore original state
 		    if (i==1) {
-		        ctx.fillStyle = "#F00"; // top of chart
+		        ctx.fillStyle = colors[2]; // top of chart
 			}
 		    else {
-		        ctx.fillStyle = "#FFB2B2";
+		        ctx.fillStyle = colors[3];
 			}
 		    ctx.fill();
 	    }
@@ -75,13 +76,12 @@ $(document).ready(function() {
 				radian = 1 - success ;
 			    lableSpace1 = (radius*2/3)*xscale * Math.cos(2*Math.PI*radian + 0.01) ;
 			    lableSpace2 = (radius*2/3)*yscale * Math.sin(2*Math.PI*radian + 0.01) ;
-				lableX1 = (centerX + space*2 +13) * xscale + lableSpace1;
-			    lableY1 = (centerY - space*2 +13)  *yscale - lableSpace2;
-			    lableX2 = 2*centerX*xscale - lableX1;
+				lableX1 = (centerX + space*2 +8) * xscale + lableSpace1;
+			    lableY1 = (centerY - space*2 +8)  *yscale - lableSpace2;
+			    lableX2 = 2*centerX*xscale - lableX1; 
 			    lableY2 = 2*centerY*yscale - lableY1;
-				drawLine(100, 155, lableX2, lableY2,120, "#0CF"); // block success
-			    drawLine(670, 105, lableX1, lableY1,-140, "#FFB2B2"); //block fail
-			
+				drawLine(100, 155, lableX2, lableY2,120, colors[4]); // block success
+			    drawLine(670, 105, lableX1, lableY1,-140, colors[5]); //block fail			
 			}
 			else {
 				lableSpace1 = (radius*2/3)*xscale * Math.cos(2*Math.PI*radian + 0.01) ;
@@ -90,19 +90,17 @@ $(document).ready(function() {
 			    lableY1 = (centerY + space*2 +13)  *yscale + lableSpace2;
 			    lableX2 = 2*centerX*xscale - lableX1;
 			    lableY2 = 2*centerY*yscale - lableY1;
-				drawLine(100, 155, lableX1, lableY1,120, "#0CF"); // block success
-			    drawLine(670, 105, lableX2, lableY2,-140, "#FFB2B2"); //block fail
+				drawLine(100, 155, lableX1, lableY1,120, colors[4]); // block success
+			    drawLine(670, 105, lableX2, lableY2,-140, colors[5]); //block fail
 			}
 			    
- 	        ctx.font = "20px Arial";
-		    ctx.fillStyle = "blue";
-		    ctx.fillText("BIỂU ĐỒ TỔNG QUÁT KHUNG NĂNG LỰC", 200, 450);
-		    ctx.fillStyle = "gray";
-		    ctx.fillText(success*100+"% ĐÃ ĐẠT", 100, 150);		   
-		    ctx.fillText(100-(success*100)+"% Chưa ĐẠT", 530, 100);
-			
-			
-	    }
+ 	        ctx.font = font;
+		    ctx.fillStyle = titleColor;
+		    ctx.fillText(title, 200, 450);
+		    ctx.fillStyle = textColor;
+		    ctx.fillText(success*100 + "%" + text[0] , 100, 150);		   
+		    ctx.fillText(100-(success*100) + "%" + text[1], 530, 100);	
+        }
 
 	    //draw 2 line 
 	    function drawLine(firstX, firstY, secondX, secondY, width, color) {
@@ -118,6 +116,7 @@ $(document).ready(function() {
 	    return {
 		    draw:draw3DPieChart
 	    }
+		
     })();
   
     my3DPieChart.draw();
