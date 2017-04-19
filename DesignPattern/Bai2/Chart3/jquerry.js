@@ -4,7 +4,7 @@ $(document).ready(function() {
     var myDonutChart = (function () {
 		 
     var myCanvas = $('#myCanvas')[0];
-    myCanvas.width = 800; 
+    myCanvas.width = 600; 
     myCanvas.height = 600;
     var ctx = myCanvas.getContext("2d");
 	var centerX = myCanvas.width/2; 

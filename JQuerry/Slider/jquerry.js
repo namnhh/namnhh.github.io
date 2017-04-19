@@ -1,4 +1,4 @@
-$(document).ready(function() {
+	$(document).ready(function() {
     var slideIndex=1;
 	showSlide(slideIndex);
 	setInterval(function(){ $("#next").click(); }, 5000);
