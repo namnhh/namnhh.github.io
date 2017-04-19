@@ -1,7 +1,7 @@
 $(document).ready(function() {
- var slideIndex = 1;
- // create mySlideModule
- var mySlideModule = ( function() {	
+    var slideIndex = 1;
+    // create mySlideModule
+    var mySlideModule = ( function() {	
     //config
     var width = 635;
     var speedAnimation = 1000;
@@ -17,55 +17,59 @@ $(document).ready(function() {
     function slideShow(n) {
         slideIndex = n;
         //init for slider
-        var location = width *(slideIndex-1); 
         $("#box"+(slideIndex)).addClass('active');
-        $slidesContainer.css('margin-left', '-'+location+'px');
-			
+        var location = width * slideIndex; 
+		$(".slide").css("opacity",0.3);
+		$("#sli"+slideIndex).css("opacity",1); 
+		$slidesContainer.animate({'margin-left' :'-'+(location - width)+'px'}, speedAnimation/2);
         //set slider run automatic
-			interval = setInterval(function() {
-				$("#sli"+slideIndex).fadeOut(1000);
+		    interval = setInterval(function() {
+				$(".slide").css("opacity",1);
 				$(".box").removeClass('active');
 				$("#box"+(slideIndex+1)).addClass('active');
-				location = width *(slideIndex); console.log(location);
+				location = width *(slideIndex); 
 				$slidesContainer.animate({'margin-left' :'-'+location+'px'}, speedAnimation, function() {
-	   				slideIndex++;			   
+	   			    slideIndex++;			   
 	   				if(slideIndex == $slide.length) {
-		 				$("#box1").addClass('active');
+		 			    $("#box1").addClass('active');
 		 				slideIndex = 1;
 		 				$slidesContainer.css('margin-left', '0px');
 	   				}
 				});
-				$("#sli"+slideIndex).fadeIn();
-			},pause);
-	}
+				$("#sli"+slideIndex).css("opacity",0.3);
+            },pause);
+    }
     //stop Slide
     function slideStop() {
-    clearInterval(interval);
-    $(".box").removeClass('active');
+        clearInterval(interval);
+        $(".box").removeClass('active');
     }
 	
     //click previous button
     function slidePrevious () {
-        slideStop()
+        slideStop();
         slideIndex--;
-        if(slideIndex < 1) 
-		  slideIndex = 4;
-        slideShow(slideIndex);
+        if(slideIndex < 1) { 
+		    slideIndex = 4;
+		}
+		slideShow(slideIndex);
     }
 	
     //click next button
     function slideNext() {
         slideStop()
         slideIndex++;
-        if(slideIndex > 4) slideIndex = 1;
+        if(slideIndex > 4) {
+		    slideIndex = 1;
+		}
         slideShow(slideIndex);
     }
 	
 	//set when click
     function slideClick(n){
         slideStop();
-        slideShow(slideIndex);
-        slideIndex = n;
+		slideIndex = n;
+		slideShow(slideIndex);        
     };
 	
 	function slideInt() {
@@ -73,22 +77,23 @@ $(document).ready(function() {
 	};
 	
 	return {
-		show: slideInt ,
-		previous: slidePrevious,
-		next: slideNext,
+        show: slideInt ,
+		previous: slidePrevious ,
+		next: slideNext ,
 		click: slideClick
 	}
- })();
+    })();
+	
     //call mySlideModule
     mySlideModule.show();
 	$("#previous").click(function () {
-		 mySlideModule.previous();
+        mySlideModule.previous();
     });
 	
 	$("#next").click(function () {
-		 mySlideModule.next();
+		mySlideModule.next();
     });
- 	jQuery.fn.onClick = function(n){
-		 mySlideModule.click(n);
+ 	jQuery.fn.onClick = function(n) {
+        mySlideModule.click(n);
     };
 });
