@@ -20,7 +20,7 @@ $(document).ready(function() {
         $("#box"+(slideIndex)).addClass('active');
         var location = width * slideIndex; 
 		$(".slide").css("opacity",0.3);
-		$("#sli"+slideIndex).css("opacity",1); 
+		$( ".slide" ).eq(slideIndex-1).css("opacity",1); 
 		$slidesContainer.animate({'margin-left' :'-'+(location - width)+'px'}, speedAnimation/2);
         //set slider run automatic
 		    interval = setInterval(function() {
@@ -36,7 +36,7 @@ $(document).ready(function() {
 		 				$slidesContainer.css('margin-left', '0px');
 	   				}
 				});
-				$("#sli"+slideIndex).css("opacity",0.3);
+				$( ".slide" ).eq(slideIndex-1).css("opacity",0.3);
             },pause);
     }
     //stop Slide
@@ -44,32 +44,49 @@ $(document).ready(function() {
         clearInterval(interval);
         $(".box").removeClass('active');
     }
+	var timeClick = 0;
 	
     //click previous button
     function slidePrevious () {
-        slideStop();
-        slideIndex--;
-        if(slideIndex < 1) { 
-		    slideIndex = 4;
+		var date = new Date;
+        var time = date.getSeconds();
+		if (time != timeClick) {
+			timeClick = time;
+            slideStop();
+            slideIndex--;
+            if(slideIndex < 1) { 
+		        slideIndex = 4;
+		    }
+		    slideShow(slideIndex);
 		}
-		slideShow(slideIndex);
     }
 	
     //click next button
     function slideNext() {
-        slideStop()
-        slideIndex++;
-        if(slideIndex > 4) {
-		    slideIndex = 1;
+		var date = new Date;
+        var time = date.getSeconds();
+		if (time != timeClick) {
+			timeClick = time;
+            slideStop()
+            slideIndex++;
+            if(slideIndex > 4) {
+		        slideIndex = 1;
+		    }
+            slideShow(slideIndex);
 		}
-        slideShow(slideIndex);
+        
     }
 	
 	//set when click
     function slideClick(n){
-        slideStop();
-		slideIndex = n;
-		slideShow(slideIndex);        
+		var date = new Date;
+        var time = date.getSeconds();
+		if (time != timeClick) {
+			timeClick = time;
+            slideStop();
+		    slideIndex = n;
+		    slideShow(slideIndex); 
+		}		
     };
 	
 	function slideInt() {
