@@ -1,12 +1,12 @@
 // JavaScript Document
 $(document).ready(function() {
-	var barGraphChart = (function () {    
+    var barGraphChart = (function () {    
     var myCanvas = $('#myCanvas')[0];
     myCanvas.width = 600; 
     myCanvas.height = 400;
     var ctx = myCanvas.getContext("2d");
     var maxValue = 0;
-	var flag;
+    var flag;
 	
     function drawChart(ctx, itemName, colorItemName, fontItemName, itemValue, colorItemValue, fontItemValue, colorColumn, colorLine) {
 		// max values of chart
@@ -19,13 +19,13 @@ $(document).ready(function() {
 			 }
 		}
 		 //init
-		var xScale;
+        var xScale;
         var yScale;
         var y;
-	    var stepSize = 1;
-	    var columnSpace = 70; // top to graph bar
-	    var rowSpace = 50; //distance between graph bars 
-	    var space = 10;
+        var stepSize = 1;
+        var columnSpace = 70; // top to graph bar
+        var rowSpace = 50; //distance between graph bars 
+        var space = 10;
 		
 		
 	    yScale = (myCanvas.height - columnSpace - space) / (maxValue); 
@@ -44,15 +44,15 @@ $(document).ready(function() {
 		    ctx.lineTo(myCanvas.width, y); // end of line
 		    count++;
 	    }
-	    ctx.stroke();
+        ctx.stroke();
 		
 		//draw line Ox
 		ctx.beginPath();
 		y = columnSpace/2 + (yScale * count * stepSize);  
-		    ctx.fillText(scale, space, y + space - 5);
-		    ctx.moveTo(rowSpace, y); //begin of line
-		    ctx.lineTo(myCanvas.width, y); 
-		    ctx.strokeStyle="black";	
+            ctx.fillText(scale, space, y + space - 5);
+            ctx.moveTo(rowSpace, y); //begin of line
+            ctx.lineTo(myCanvas.width, y); 
+            ctx.strokeStyle="black";	
             ctx.stroke();
 			
 		// fill text in 0x	
@@ -66,8 +66,8 @@ $(document).ready(function() {
 		ctx.fill();		
 			
 		// draw column of graph bars 
-		ctx.fillStyle = colorColumn; //color of column	
-		ctx.translate(0,myCanvas.height - space - columnSpace/2);
+        ctx.fillStyle = colorColumn; //color of column	
+        ctx.translate(0,myCanvas.height - space - columnSpace/2);
 	    ctx.scale(xScale, -1 * yScale);
 	    for (i = 0; i <= maxValue; i++) {
 		    ctx.fillRect(i+0.45, 0, 0.6, itemValue[i]);
@@ -94,10 +94,10 @@ $(document).ready(function() {
     function drawBarGraphChart() {
 		if (flag) {
 	        drawChart(ctx, itemName, colorItemName, fontItemName, itemValue, colorItemValue, fontItemValue, colorColumn, colorLine);  
-		    fillText();
+            fillText();
 		}
 		else {
-			alert("Wrong Input");
+	        alert("Wrong Input");
 		}
 	}
 	return {
