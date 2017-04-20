@@ -6,18 +6,18 @@ $(document).ready(function() {
     myCanvas.height = 400;
     var ctx = myCanvas.getContext("2d");
     var maxValue = 0;
-    var flag;
-	
-    function drawChart(ctx, itemName, colorItemName, fontItemName, itemValue, colorItemValue, fontItemValue, colorColumn, colorLine) {
-		// max values of chart
-		for (i = 0; i < itemValue.length; i++) {
+    var flag = 1;
+    // set max values of chart and check value
+	    for (i = 0; i < itemValue.length; i++) {
 			 if (itemValue[i] <= 0) {
-				 flag = false;
+				 flag = 0;
 			 }
 			 if (maxValue < itemValue[i]) {
 				 maxValue = itemValue[i];
 			 }
 		}
+		
+    function drawChart(ctx, itemName, colorItemName, fontItemName, itemValue, colorItemValue, fontItemValue, colorColumn, colorLine) {
 		 //init
         var xScale;
         var yScale;
@@ -28,8 +28,8 @@ $(document).ready(function() {
         var space = 10;
 		
 		
-	    yScale = (myCanvas.height - columnSpace - space) / (maxValue); 
-	    xScale = (myCanvas.width - rowSpace) / (itemName.length);	
+        yScale = (myCanvas.height - columnSpace - space) / (maxValue); 
+        xScale = (myCanvas.width - rowSpace) / (itemName.length);	
 	    
 		// set value in  and draw line behind column  
 		ctx.beginPath();
@@ -92,11 +92,11 @@ $(document).ready(function() {
     }
 	
     function drawBarGraphChart() {
-		if (flag) {
+		if (flag == 1) {
 	        drawChart(ctx, itemName, colorItemName, fontItemName, itemValue, colorItemValue, fontItemValue, colorColumn, colorLine);  
             fillText();
 		}
-		else {
+		else if(flag == 0) {
 	        alert("Wrong Input");
 		}
 	}
