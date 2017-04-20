@@ -1,6 +1,6 @@
-// JavaScript Document
+﻿// JavaScript Document
 var itemName = [ "A", "B", "C", "E", "F"]; // name in Ox
-var itemValue = [ -2, 0.05, 3, 4, 4]; // data in 0y
+var itemValue = [ 2, 0.05, 3, 4, 4]; // data in 0y
 var colorColumn = "blue"; //color of column
 var colorLine = "#CCC"; // color of line behind column
 
