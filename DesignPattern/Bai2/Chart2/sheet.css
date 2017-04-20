@@ -27,12 +27,12 @@ body, h2 {
 }
 #left p{
 	width:400px;
-	color:#999;
+	color:#333;
 	text-align: center;
 	position: relative;
 	top: 75px;
-	left: -170px;
-	font-size: 30px;
+	left: -140px;
+	font-size:30px;
 }
 #right {
 	margin-top:15px;
@@ -40,8 +40,8 @@ body, h2 {
 	width:40px;
 }
 #footer {
-	color:#999;
-	font-size: 30px;
+	color:#333;
+	font-size:30px;
 	text-align: center;
 	padding-top: 10px;
 }

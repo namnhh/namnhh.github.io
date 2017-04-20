@@ -1,5 +1,5 @@
     var data = {
-            "Xuất sắc": -10, // text and data of text 1
+            "Xuất sắc": 10, // text and data of text 1
 		    "Tốt": 20, //// text and data of text 2
 		    "Trung Bình": 10, // text and data of text 3
 		    "Kém": 60 	// text and data of text 4
