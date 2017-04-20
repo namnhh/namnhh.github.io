@@ -9,7 +9,7 @@ $(document).ready(function() {
     var ctx = myCanvas.getContext("2d");
 	var centerX = myCanvas.width/2; 
 	var centerY = myCanvas.height/2;
-	
+	var flag;
    
     //function draw Pie Slice  of Circle
     function drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color) {
@@ -31,6 +31,9 @@ $(document).ready(function() {
 		 for (var categ in data) {
 		     var val = data[categ];
 			 totalValue += val;
+			 if (val < 0) {
+				 flag = false;
+			 }
 		 }
 		
 		//draw pie chart
@@ -84,8 +87,13 @@ $(document).ready(function() {
    }
    
     function drawDonutPieChart() {
-        drawChart(ctx, centerX, centerY, data, colors, donutSize);
-	    drawText(data, colors);
+		if (flag) {
+           drawChart(ctx, centerX, centerY, data, colors, donutSize);
+	       drawText(data, colors);
+		}
+		else {
+			alert("Wrong Input");
+		}
     }
    
     return {

@@ -6,10 +6,14 @@ $(document).ready(function() {
     myCanvas.height = 400;
     var ctx = myCanvas.getContext("2d");
     var maxValue = 0;
+	var flag;
 	
-    function drawChart() {
+    function drawChart(ctx, itemName, colorItemName, fontItemName, itemValue, colorItemValue, fontItemValue, colorColumn, colorLine) {
 		// max values of chart
-		for (i=0;i<itemValue.length;i++) {
+		for (i = 0; i < itemValue.length; i++) {
+			 if (itemValue[i] <= 0) {
+				 flag = false;
+			 }
 			 if (maxValue < itemValue[i]) {
 				 maxValue = itemValue[i];
 			 }
@@ -42,7 +46,7 @@ $(document).ready(function() {
 	    }
 	    ctx.stroke();
 		
-		//draw line as Ox
+		//draw line Ox
 		ctx.beginPath();
 		y = columnSpace/2 + (yScale * count * stepSize);  
 		    ctx.fillText(scale, space, y + space - 5);
@@ -51,7 +55,7 @@ $(document).ready(function() {
 		    ctx.strokeStyle="black";	
             ctx.stroke();
 			
-		// fill text as 0x	
+		// fill text in 0x	
 		ctx.beginPath();
 		ctx.fillStyle = colorItemName;
 		ctx.font = fontItemName;
@@ -70,9 +74,34 @@ $(document).ready(function() {
 	    }		
 		
 	}	
-	   
-    return {
-		draw : drawChart
+	
+	function fillText() {
+		var stringHeader, stringItemValue, stringItemName, string;
+		stringHeader = "<h1>" + header + "</h1>";
+		$("#header").append(stringHeader);
+		
+		stringItemValue = "<p>" + itemValueTitle + "</p>";
+		$("#left").append(stringItemValue);
+		
+		stringItemName = "<p>" + itemNameTitle + "</p>";
+		$("#footer").append(stringItemName);
+		
+		string = "<p><span style='display:inline-block; width:60px; height: 20px; magin-right:10px; background-color:" 
+			        + colorColumn + "'>&nbsp;</span>" + itemValueTitle + "</p>";
+		$("#right").append(string);	
+    }
+	
+    function drawBarGraphChart() {
+		if (flag) {
+	        drawChart(ctx, itemName, colorItemName, fontItemName, itemValue, colorItemValue, fontItemValue, colorColumn, colorLine);  
+		    fillText();
+		}
+		else {
+			alert("Wrong Input");
+		}
+	}
+	return {
+		draw : drawBarGraphChart
 	}
 	
     })();
