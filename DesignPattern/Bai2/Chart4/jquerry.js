@@ -41,7 +41,7 @@ $(document).ready(function() {
 		var count =  0;
 			for (scale = maxValue; scale >= 1; scale = scale - stepSize) {
 			y = columnSpace/2 + (yScale * count * stepSize);  
-			ctx.fillText(scale, space, y + space - 5);
+			ctx.fillText(scale, space, y + space - 5); // fill value
 			ctx.moveTo(rowSpace, y); //begin of line
 			ctx.lineTo(myCanvas.width, y); // end of line
 			count++;
@@ -77,6 +77,7 @@ $(document).ready(function() {
 
 	}	
 	
+	//fill text: header, itemname, itemvalue
 	function fillText() {
 		var stringHeader, stringItemValue, stringItemName, string;
 		stringHeader = "<h1>" + header + "</h1>";

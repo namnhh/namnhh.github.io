@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="hoainam.com.huongdichvu">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AllTabActivity" />
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/sign_up" />
+        <activity
+            android:name=".TabList"
+            android:label="@string/list" />
+        <activity
+            android:name=".TabNews"
+            android:label="@string/news" />
+        <activity
+            android:name=".TabFeeBack"
+            android:label="@string/feeback" />
+        <activity
+            android:name=".TabAccount"
+            android:label="@string/account" />
+        <activity android:name=".TabListDetail"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mua Bán Nhà</string>
+    <string name="sign_up">Đăng Ký</string>
+    <string name="list">Tìm Kiếm</string>
+    <string name="news">Đăng Tin</string>
+    <string name="feeback">Phản Hồi</string>
+    <string name="account">Cá Nhân</string>
+
+</resources>
