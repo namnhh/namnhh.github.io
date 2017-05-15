@@ -69,7 +69,7 @@ $(document).ready(function(e)
 		  selectable: false
 		});
 	}
-	
+	/*NamNHH-begin-add*/
 	function makeBlueLine2(coords) 
 	{
 		return new fabric.Line(coords, 
@@ -79,7 +79,7 @@ $(document).ready(function(e)
 		  strokeWidth: 2,
 		  selectable: false
 		});
-	}
+	}/*NamNHH-end-add*/
 	
 	function makeText(text,left,top)
 	{
@@ -106,7 +106,7 @@ $(document).ready(function(e)
 		  selectable: false
 		});
 	}
-	
+	/*NamNHH-begin-add*/
 	function makeOptionText(text,left,top,color)
 	{
 		return new fabric.Text(text, {
@@ -118,7 +118,7 @@ $(document).ready(function(e)
 		  originY: 'center',
 		  selectable: false
 		});
-	}
+	}/*NamNHH-end-add*/
 	
 	function makeRedText(text,left,top)
 	{
@@ -174,7 +174,7 @@ $(document).ready(function(e)
 		});
 	}
 	
-	
+	/*NamNHH-begin-add*/
 	function makeRect(left,top,color)
 	{
 		return new fabric.Rect
@@ -186,10 +186,9 @@ $(document).ready(function(e)
 			top: top, 
 			selectable: false  
 		});
-	}
+	}/*NamNHH-end-add*/
 
-	//draw chart
-	
+	//draw chart	
 	text_value = makeTitle('温度・湿度２４時間データ',550,30);
 	canvas.add(text_value);
 	drawingFramesChart(array_hour_c,array_hour_percent,array_hour_option);
@@ -202,6 +201,8 @@ $(document).ready(function(e)
 		text_value = makeRedText('温度\n ºC',-5,-10);
 		main_layer.add(line,text_value);
 		var	temp_c = 40;
+		
+		/*NamNHH-begin-update*/
 		for(i=0;i<=5;i++)
 		{
 			if(i==0 || i==5)
@@ -225,7 +226,8 @@ $(document).ready(function(e)
 			text_value = makeRedText(temp_c.toString(),-10,frameLength_y_c*i+13);
 			temp_c-=10;
 			main_layer.add(text_value,gray_line);
-		}
+		}/*NamNHH-end-update*/
+		
 		//draw y (temperature %)
 		frameLength_y_temperature = 80;
 		//line = makeLine([ -50, 20, -50, 420 ]);
@@ -238,7 +240,7 @@ $(document).ready(function(e)
 		}
 		//draw x (hour/day)
 		
-		if(index_tab == 0)
+		if(index_tab == 0) /*NamNHH-begin-update for 24hour*/
 		{
 			text_value = makeText('時間',720,420+7); //chang Ox's title of tab 24h here. 
 			//line = makeGrayLineStrong([ -100, 420, 721, 420 ]);
@@ -263,9 +265,9 @@ $(document).ready(function(e)
 			}
 			drawingChart(array_c,array_percent,frameLength_x_hour);//call draw chart
 			drawingSmallChart(array_option,length_x_hour,frameLength_x_hour,optionColors)//call small chart
-		}
+		} /*NamNHH-end-update for 24hour*/
 		//draw x (day/month)
-		else if (index_tab == 1)
+		else if (index_tab == 1) /*NamNHH-begin-update for 30days*/
 		{
 			text_value = makeText('日',720,420+7); //chang Ox's title of tab 30 days here. 
 			line = makeGrayLineStrong([ -100, 420, 690, 420 ]);
@@ -291,8 +293,8 @@ $(document).ready(function(e)
 			
 			drawingChart(array_c,array_percent,frameLength_x_day);//call draw chart
 			drawingSmallChart(array_option,length_x_day,frameLength_x_day,optionColors);//call small chart
-		}
-		else 
+		}  /*NamNHH-update for 30days*/
+		else /*NamNHH-begin-add for 60minutes*/
 		{
 			text_value = makeText('minutes',720,420+7); //chang Ox's title of tab 60 minutes here. 
 			line = makeGrayLineStrong([ -100, 420, 690, 420 ]);
@@ -322,7 +324,8 @@ $(document).ready(function(e)
 		canvas.add(main_layer);
 		canvas.sendBackwards(main_layer);
 		
-	}//end draw frame
+	}  /*NamNHH-end-add for 60minutes*/
+	//end draw frame
 	
 	function drawingChart(array_1,array_2,line_length)//draw chart
 	{
@@ -345,6 +348,7 @@ $(document).ready(function(e)
 		canvas.add(main_chart);
 	}//end draw chart
 	
+	/*NamNHH-begin-add*/
 	function drawingSmallChart(array,length,line_length,color)//draw small chart
 	{
 		var main_chart = new fabric.Group([], {	  left: 170,	top: 70	, selectable: false});
@@ -358,7 +362,7 @@ $(document).ready(function(e)
 
 		canvas.add(main_chart);
 	}//end draw small chart
-
+	/*NamNHH-end-add*/
 	
 	// event
 	$(".ul_tab li").click(function(e){
@@ -368,25 +372,25 @@ $(document).ready(function(e)
 			index_tab = $(this).index();
 			$('.ul_tab li a').removeClass("act");
 			$('.ul_tab li a').eq(index_tab).addClass("act");
-			if(index_tab == 0)
+			if(index_tab == 0) /*NamNHH-begin-update 24h*/
 			{
 				text_value = makeTitle('温度・湿度２４時間データ',550,30); // set title for tab 24h
 				canvas.add(text_value);
 				drawingFramesChart(array_hour_c,array_hour_percent,array_hour_option);	
-			}
+			} /*NamNHH-end-update 24h*/
 			
-			else if(index_tab == 1)
+			else if(index_tab == 1) /*NamNHH-begin-update 30days*/
 			{
 				text_value = makeTitle('温度・湿度３０日データ',550,30);//set title for 30 days
 				canvas.add(text_value);				
 				drawingFramesChart(array_day_c,array_day_percent,array_day_option);	
-			}
-			else
+			} /*NamNHH-end-update 30days*/
+			else /*NamNHH-begin-add 60minutes*/
 			{
 				text_value = makeTitle('60 minute',550,30);//set title for 30 days
 				canvas.add(text_value);				
 				drawingFramesChart(array_minute_c,array_minute_percent,array_minute_option);
-			}
+			} /*NamNHH-end-add 60minutes*/
 			
 		}
 	});
