@@ -1,0 +1,11 @@
+/* CSS Document */
+.inp {
+	border: solid 1px #0FC;
+	margin-bottom:3px;
+}
+.but {
+	margin:10px;
+	background-color:#09F;
+	color:#FFF;
+	text-align:center;
+}
