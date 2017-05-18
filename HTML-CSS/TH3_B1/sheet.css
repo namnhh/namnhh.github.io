@@ -1,0 +1,151 @@
+/* CSS Document */
+body{
+	margin:0;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+a,p,h4,ul{
+	margin:0;
+	padding:0;
+	text-decoration:none;
+}
+li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#wrapper {
+	margin-left:40%;
+	background-color:#e6f3fb;
+	display:inline-block;
+	width:300px;
+}
+#blogroll {
+	margin-left:10px;
+	margin-right:10px;
+}
+.title {
+	padding-top:5px;
+	border-bottom:solid 2px #ffa500;
+	font-size:13px;
+}
+#blogroll_top {
+	padding-top:7.5px;
+	padding-left:5px;
+	padding-bottom:5px;
+	background-color:#FFF;
+	display:inline-block;
+}
+#blogroll_top img {
+	padding:1px;
+	border:solid 1px #cccccc;
+	float:left;
+	clear:right;
+	margin-right:5px;
+	margin-bottom:5px;
+	width:164px; 
+	height:72px;
+}
+
+#blogroll_top a:link,a:visited {
+	color:#0a6395;
+}
+#blogroll_bottom {
+	background-color:#faf0bf;
+}
+#blogroll_bottom li{
+	width:97.2%;
+	border-bottom:solid 1px #FFFFFF;
+	color:#0a6395;
+	padding-bottom:7px;
+	padding-top:7px;
+	display:inline-block;
+	padding-left:8px;
+}
+#horoscopes {
+	margin-left:1px;
+	margin-right:1px;
+}
+#horoscopes_top {
+	padding-top:7.5px;
+	padding-bottom:5px;
+	background-color:#FFF;
+	display:inline-block;
+}
+#horoscopes_top img {
+	float:left;
+	clear:right;
+	margin-right:2px;
+	margin-bottom:5px;
+	width:100px;
+	height:140px;
+}
+#horoscopes_top h4 {
+	padding-top:20px;
+}
+#horoscopes_top a {
+	text-decoration:underline;
+	color:#0a6395;
+}
+#horoscopes_bottom {
+	width:100%;
+	background:#f4f4ec;
+	display:inline-block;
+	position:relative;
+	padding-top:20px;
+	padding-bottom:14px;
+}
+#horoscopes_bottom a{
+	color:#0a6395;
+}
+#horoscopes_bottom img {
+	position:absolute;
+	left:173px;
+	top:-2.6px;
+	width:105px;
+	height:60px;
+}
+#new_content {
+	padding-top:7.5px;
+	padding-left:5px;
+	padding-bottom:18px;
+	background-color:#FFF;
+	display:inline-block;
+	position:relative;
+	margin-bottom:8px;
+}
+#new_content img {
+	position:absolute;
+	top:0px;
+	left:140px;
+	width:140px; 
+	height:110.5px;
+}
+#inf {
+	padding-top:10px;
+	width:50%;;
+}
+#new_content a {
+	padding-bottom:10px;
+	text-decoration:none;
+	color:#0a6395;
+	font-size:12px;
+}
+#competitions {
+	padding-top:5px;
+	padding-bottom:15px;
+	border-top:solid 1px  #cccccc ;
+}
+#competiton_inf {
+	padding-top:7.5px;
+	padding-left:5px;
+	padding-right:41px;
+	background-color:#FFF;
+	display:inline-block;
+	border:solid 1px #dadada ;
+}
+#competiton_inf p {
+	line-height:15px;
+	color:#0a6395;
+}
