@@ -1,6 +1,0 @@
-/* CSS Document */
-@charset "utf-8";
-@import url("reset.css"); /*reset các thẻ trong html*/
-@import url("style.css"); /*định dạng các thẻ trong html */
-@import url("responsive.css"); /*responsive cho trang web*/
-@import url("library.meanmenu.css")  screen and (min-width:0px) and (max-width: 640px); /*định dạng navigation menu cho thiet bi di dong*/
