@@ -1,0 +1,111 @@
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+	margin:auto;
+	padding:auto;
+
+}
+#wrapper {
+	width: 500px;
+	height:100%;
+	border: solid 1px #0033FF;
+	margin:auto;
+}
+p {
+	padding: 0;
+	margin: 0
+}
+a {
+	color: #00F;
+}
+#pp_title {
+	font-weight: bold;
+	height: 25px;
+	background: url('images/title_background.gif');
+	line-height: 25px;
+}
+#information {
+	height: 100px;
+	margin-bottom: 25px;
+}
+#information #avatar {
+	width: 100px;
+	height: 90px;
+	float: left;
+}
+.pp_inf {
+	float: left;
+	overflow: scroll;
+	height: 100%;
+	width: 80%;
+	font-size: 16px;
+}
+.pp_inf p {
+	padding-left:10%;
+}
+#t_title {
+	font-weight: bold;
+	margin-left: 1px;
+}
+.t_list img {
+	margin-left: 20 px;
+}
+.t_list li {
+	list-style-type: none;
+	line-height: 18px;
+	margin-left: 3px;
+	font-size: 16.5;
+}
+#comment {
+	margin-top: 50px;
+}
+.c_list {
+	background: #ECECEC;
+	margin-bottom: 0px;
+	margin-left:1%;
+	margin-right:1%;
+}
+.c_list p {
+	font-size: 15px;
+}
+.post {
+	margin-left: 15px;
+	margin-top: 0px;
+	font-size: 15px;
+}
+.post img {
+	margin-left: 15dpx;
+	width: 25px;
+	hegiht: 20px;
+	float: left;
+}
+#y_comment {
+	margin-top: 20px;
+	padding: 5px;
+}
+#y_comment h3 {
+	margin-top: 0;
+	text-align: center;
+	margin-bottom: 1px;
+	font-size: 17px;
+}
+#y_comment table {
+	margin-top: 0;
+	font-size: 15px;
+}
+#y_comment table .td1 {
+	width: 23%;
+}
+#y_comment table .td2 {
+	width: 77%;
+}
+#y_comment table input {
+	width: 39%;
+	height: 17px;
+}
+#y_comment table textarea {
+	width: 99%;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+textarea {
+	resize: none;
+}
