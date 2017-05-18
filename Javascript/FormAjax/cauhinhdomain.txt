@@ -1,0 +1,18 @@
+
+Main Hosting Details
+Control panel username b13_19943469
+Control panel password	**********(123456)
+Control panel URL
+cpanel.byethost13.com
+MySQL username b13_19943469
+MySQL password **********
+MySQL hostname sql310.byethost13.com
+database name b13_19943469_hoainam	
+FTP username
+b13_19943469
+FTP password
+**********
+FTP host name	ftp.byethost13.com
+Your Website URL's
+Home page
+http://ajaxformjs.byethost13.com
